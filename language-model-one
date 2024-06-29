@@ -1,0 +1,30 @@
+Computers make predictions about language by training a language model on a bunch of example text. 
+
+Language models: probabilistic computer models of language.
+    - Bag-of-words: count of each instance for each word ({"the": 2, "squid": 1, "jump": 1, "out": 1, "of": 1, "suitcase": 1})
+
+    - Code example: 
+        import re, nltk
+        from nltk.corpus import stopwords
+        from nltk.tokenize import word_tokenize
+        from nltk.stem import WordNetLemmatizer
+        # importing Counter to get word counts for bag of words
+        from collections import Counter
+        from looking_glass import looking_glass_text
+        # importing part-of-speech function for lemmatization
+        from part_of_speech import get_part_of_speech
+
+        text = "My name is Margaret"
+
+        cleaned = re.sub('\W+', ' ', text).lower()
+        tokenized = word_tokenize(cleaned)
+
+        stop_words = stopwords.words('english')
+        filtered = [word for word in tokenized if word not in stop_words]
+
+        normalizer = WordNetLemmatizer()
+        normalized = [normalizer.lemmatize(token, get_part_of_speech(token)) for token in filtered]
+        # print(normalized)
+        bag_of_looking_glass_words = Counter(normalized)
+        print(bag_of_looking_glass_words)
+

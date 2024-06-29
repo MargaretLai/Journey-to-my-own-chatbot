@@ -4,7 +4,7 @@ Parsing: an NLP process concerned with segmenting text based on syntax
   - Named entity recognition (NER) helps identify the proper nouns (e.g., “Natalia” or “Berlin”) in a text. 
   - Dependency grammar trees help you understand the relationship between the words in a sentence.
 
-  - Code example
+  - Code example (this prints out trees of text)
     import spacy
     from nltk import Tree
     from squids import squids_text
