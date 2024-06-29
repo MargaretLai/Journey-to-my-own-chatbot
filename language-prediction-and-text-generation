@@ -1,0 +1,7 @@
+- Language prediction is an application of NLP concerned with predicting text given preceding text. 
+    - bag-of-words is not a good choice alone.
+    - if use n-gram, most likely will rely on Markov chains to to predict the statistical likelihood of each following word (or character) based on the training corpus. 
+        - I ate so many grilled cheese”. 
+            - Using a trigram model (where n is 3), a Markov chain would predict the following word as “sandwiches” based on the number of times the sequence “grilled cheese sandwiches” has appeared in the training data out of all the times “grilled cheese” has appeared in the training data.
+
+- Long Short Term Memory (LSTM): a neural language model uses uses deep learning with a network of artificial “cells” that manage memory, making them better suited for text prediction than traditional neural networks.
