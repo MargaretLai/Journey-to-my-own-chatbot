@@ -1,0 +1,22 @@
+| or
+[] character set
+[cat] means either c/a/t
+[^cat] anything that's not c/a/t, a/b/d/...
+. wildcard. as long as there exist a character
+\. period
+
+Ranges: 
+[0-9]
+[a-z]
+[A-Z]
+Remember, within any character set [] we only match one character.
+
+Shorthand Character Classes:
+\w: word character, [A-Za-z0-9_]
+\d: digit character, [0-9]
+\s: space character, [ \t\r\n\f\v]
+
+Negated Shorthand Character Classes:
+\W: [^A-Za-z0-9_]
+\D: [^0-9]
+\S: [^ \t\r\n\f\v]
