@@ -1,6 +1,6 @@
-Computers make predictions about language by training a language model on a bunch of example text. 
+- Computers make predictions about language by training a language model on a bunch of example text. 
 
-Language models: probabilistic computer models of language.
+- Language models: probabilistic computer models of language.
     - Bag-of-words: count of each instance for each word ({"the": 2, "squid": 1, "jump": 1, "out": 1, "of": 1, "suitcase": 1})
 
     - Code example: 

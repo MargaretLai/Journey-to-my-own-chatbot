@@ -1,0 +1,29 @@
+- Autocorrect: basically addressing text similarity
+    - Word similarity: addressing word similarity and misspelling for spellcheck or autocorrect often involves considering the Levenshtein distance or minimal edit distance between two words. 
+        - The distance is calculated through the minimum number of insertions, deletions, and substitutions that would need to occur for one word to become another. 
+            - For example, turning “bees” into “beans” would require one substitution (“a” for “e”) and one insertion (“n”), so the Levenshtein distance would be two.
+    
+    - Phonetic similarity: how much two words or phrases sound the same
+
+    - (the following two are used against plagiarism)
+        - Lexical similarity: the degree to which texts use the same vocabulary and phrases
+        - Semantic similarity: the degree to which documents contain similar meaning or topics
+
+- Levenshtein distance Code
+    import nltk
+    # NLTK has a built-in function
+    # to check Levenshtein distance:
+    from nltk.metrics import edit_distance
+
+    def print_levenshtein(string1, string2):
+    print("The Levenshtein distance from '{0}' to '{1}' is {2}!".format(string1, string2, edit_distance(string1, string2)))
+
+
+    print_levenshtein("fart", "target")
+
+    three_away_from_code = "codeabc"
+
+    two_away_from_chunk = "chunkab"
+
+    print_levenshtein("code", three_away_from_code)
+    print_levenshtein("chunk", two_away_from_chunk)
