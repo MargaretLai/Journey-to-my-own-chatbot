@@ -1,4 +1,5 @@
-Parsing: an NLP process concerned with segmenting text based on syntax
+- gensim and sklearn are common Python libraries that handle syntax parsing.
+- Parsing: an NLP process concerned with segmenting text based on syntax
 
   - Part-of-speech tagging (POS tagging) identifies parts of speech (verbs, nouns, adjectives, etc.).
   - Named entity recognition (NER) helps identify the proper nouns (e.g., “Natalia” or “Berlin”) in a text. 
