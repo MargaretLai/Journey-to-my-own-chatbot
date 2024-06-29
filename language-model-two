@@ -1,0 +1,39 @@
+- n-gram model considers a sequence of some number (n) units and calculates the probability of each unit in a body of language given the preceding sequence of length n. 
+    - Example: “The squids jumped out of the suitcases. The squids were furious.”
+        {('', 'the'): 2, ('the', 'squids'): 2, ('squids', 'jumped'): 1, ('jumped', 'out'): 1, ('out', 'of'): 1, ('of', 'the'): 1, ('the', 'suitcases'): 1, ('suitcases', ''): 1, ('squids', 'were'): 1, ('were', 'furious'): 1, ('furious', ''): 1}
+
+- neural language models (NLMs)
+    - developing and training neural networks to approximate the approach our human brains take towards language
+    - Common NLMs include LSTMs and transformer models.
+
+- Code Example: 
+    import nltk, re
+    from nltk.tokenize import word_tokenize
+    # importing ngrams module from nltk
+    from nltk.util import ngrams
+    from collections import Counter
+    from looking_glass import looking_glass_full_text
+
+    cleaned = re.sub('\W+', ' ', looking_glass_full_text).lower()
+    tokenized = word_tokenize(cleaned)
+
+    # Change the n value to 2:
+    looking_glass_bigrams = ngrams(tokenized, 2)
+    looking_glass_bigrams_frequency = Counter(looking_glass_bigrams)
+
+    # Change the n value to 3:
+    looking_glass_trigrams = ngrams(tokenized, 3)
+    looking_glass_trigrams_frequency = Counter(looking_glass_trigrams)
+
+    # Change the n value to a number greater than 3:
+    looking_glass_ngrams = ngrams(tokenized, 10)
+    looking_glass_ngrams_frequency = Counter(looking_glass_ngrams)
+
+    print("Looking Glass Bigrams:")
+    print(looking_glass_bigrams_frequency.most_common(10))
+
+    print("\nLooking Glass Trigrams:")
+    print(looking_glass_trigrams_frequency.most_common(10))
+
+    print("\nLooking Glass n-grams:")
+    print(looking_glass_ngrams_frequency.most_common(10))
