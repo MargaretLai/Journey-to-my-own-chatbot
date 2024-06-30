@@ -2,7 +2,7 @@
 [] character set
 [cat] means either c/a/t
 [^cat] anything that's not c/a/t, a/b/d/...
-. wildcard. as long as there exist a character
+. wildcard. will match any single character
 \. period
 
 Ranges: 
@@ -20,3 +20,24 @@ Negated Shorthand Character Classes:
 \W: [^A-Za-z0-9_]
 \D: [^0-9]
 \S: [^ \t\r\n\f\v]
+
+() grouping: I love (baboons|gorillas)
+
+\w{3}: will match exactly 3 word characters
+\w{4,7} will match at minimum 4 word characters and at maximum 7 word characters
+    Example: 
+    roa{3}r will match the characters ro followed by 3 as, and then the character r, such as in the text roaaar
+    roa{3,7}r will match the characters ro followed by at least 3 as and at most 7 as, followed by an r, matching the strings roaaar, roaaaaar and roaaaaaaar
+
+Optional Quantifier: ?
+ For example, the regex humou?r matches the characters humo, then either 0 occurrences or 1 occurrence of the letter u, and finally the letter r.
+Notice the difference between ? and \?
+
+The Kleene star *: 
+    meo*w will match the characters me, followed by 0 or more os, followed by a w. Thus the regex will match mew, meow, meooow, and meoooooooooooow.
+
+The Kleene plus +: 
+    meo+w will match the characters me, followed by 1 or more os, followed by a w. Thus the regex will match meow, meooow, and meoooooooooooow, but not match mew
+
+The anchors har ^ and dollar sign $: (^xxxxx x xx $)
+    ^Monkeys: my mortal enemy$ will completely match the text Monkeys: my mortal enemy but not match Spider Monkeys: my mortal enemy in the wild or Squirrel Monkeys: my mortal enemy in the wild
