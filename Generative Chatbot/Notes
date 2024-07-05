@@ -1,0 +1,12 @@
+Neural networks are a machine learning framework loosely based on the structure of the human brain.
+
+Neural Networks:
+    - A single neuron in a network, takes in a single piece of input data, and performs some data transformation to produce a single piece of output.
+
+Recurrent Neural Network: 
+    RNNs are one of the most commonly used neural network architectures today.
+
+Long short-term memory network (LSTM):
+    A RNN variant, popular for building realistic chatbot systems. 
+        - Short-term: "Grass is ____"   greener, any english speaker knows
+        - Long-term: "Winter is here and it's freezing. Grass is _____"     dead, brown, not greener because of context
